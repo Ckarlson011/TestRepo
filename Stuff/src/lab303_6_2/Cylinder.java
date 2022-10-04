@@ -1,6 +1,6 @@
 package lab303_6_2;
 
-public class Cylinder extends Circle {
+public class Cylinder extends Circle{
 	private final double PI = Math.PI;
 
 	public Cylinder(double radius, double height) {

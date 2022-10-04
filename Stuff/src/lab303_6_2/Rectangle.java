@@ -1,6 +1,6 @@
 package lab303_6_2;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Movable{
 	public Rectangle(String color) {
 		super(color);
 	}

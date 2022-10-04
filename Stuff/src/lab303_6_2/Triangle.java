@@ -1,6 +1,6 @@
 package lab303_6_2;
 
-public class Triangle extends Shape {
+public class Triangle extends Shape implements Movable{
 	public Triangle() {
 	}
 

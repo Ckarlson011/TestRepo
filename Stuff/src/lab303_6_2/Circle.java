@@ -1,6 +1,6 @@
 package lab303_6_2;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Movable{
 	protected double radius;
 	private final double PI = Math.PI;
 
