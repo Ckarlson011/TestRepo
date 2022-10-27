@@ -1,27 +1,41 @@
 package com.test.hib.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "orders")
 public class Orders {
 
-	@Column(name = "ORDERNUMBER")
+	//@Column determines the name of the column the field maps to
+	//if the field name is the same as the column name
+	//the annotation is not required
+	@Column(name = "orderNumber")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer orderNumber;
-	@Temporal(TemporalType.DATE)
+	
+	//@Temporal(TemporalType.DATE)
 	private Date orderDate;
-	@Temporal(TemporalType.DATE)
+	
+	//@Temporal(TemporalType.DATE)
 	private Date requiredDate;
-	@Temporal(TemporalType.DATE)
+	
+	//@Temporal(TemporalType.DATE)
+	
 	private Date shippedDate;
+	
 	private String status;
+	
+	@Lob
+	@Column(name = "comments", columnDefinition = "TEXT")
 	private String comments;
+	
 	private Integer customerNumber;
 
-	
+	public Orders() {
+		
+	}
 	
 	public Orders(Date orderDate, Date requiredDate, Date shippedDate, String status,
 			String comments, Integer customerNumber) {

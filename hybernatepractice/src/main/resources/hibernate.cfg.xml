@@ -3,7 +3,7 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- Drop and re-create the database on startup -->
-		<property name="hibernate.hbm2ddl.auto"> update </property>
+		<property name="hibernate.hbm2ddl.auto"> validate </property>
 
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
@@ -19,6 +19,6 @@
 
 		<!--   Mapping entity file -->
 		<mapping class="com.test.hib.model.Orders" />
-		<mapping class="com.test.hib.model.Orderdetails" />
+		<!--<mapping class="com.test.hib.model.Orderdetails" />-->
 	</session-factory>
 </hibernate-configuration>
