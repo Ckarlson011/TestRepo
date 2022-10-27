@@ -27,7 +27,6 @@ public class Orders {
 	
 	private String status;
 	
-	@Lob
 	@Column(name = "comments", columnDefinition = "TEXT")
 	private String comments;
 	
