@@ -19,6 +19,7 @@
 
 		<!--   Mapping entity file -->
 		<mapping class="com.test.hib.model.Orders" />
+		<mapping class="com.test.hib.model.OrderDetails" />
 		<!--<mapping class="com.test.hib.model.Orderdetails" />-->
 	</session-factory>
 </hibernate-configuration>

@@ -1,12 +1,9 @@
 package com.test.project.hybernatepractice;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
+import java.util.Date;
 
-import com.test.hib.controller.GetOrders;
 import com.test.hib.model.Orders;
+import com.test.hib.dao.dao;
 
 public class App {
 
@@ -15,17 +12,15 @@ public class App {
 		// Integer orderNumber = new Integer(10123);
 		// Orders order = byOrderNumber(orderNumber);
 		// System.out.println(order.getOrderNumber);
+		dao DAO = new dao();
+		Orders order = DAO.findByOrderNumber(10101);
+		System.out.println(order.toString());
+		
+		order.setStatus("PENDING");
+		order.setOrderDate(new Date());
+		
+		DAO.Save(order);
 
-		SessionFactory factory = new Configuration().configure().buildSessionFactory();
-
-		Session session = factory.openSession();
-		Transaction tx = session.beginTransaction();
-
-		Orders order = new Orders();
-		System.out.println("Success!");
-		tx.commit();
-		factory.close();
-		session.close();
 	}
 
 }
