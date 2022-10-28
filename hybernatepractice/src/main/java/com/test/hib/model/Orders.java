@@ -24,7 +24,7 @@ public class Orders {
 	//the annotation is not required
 	@Column(name = "orderNumber")
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer orderNumber;
 	
 	//@Temporal(TemporalType.DATE)
