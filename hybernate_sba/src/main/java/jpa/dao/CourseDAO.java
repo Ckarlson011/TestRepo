@@ -2,6 +2,8 @@ package jpa.dao;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,11 +19,14 @@ public class CourseDAO {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		
-		
+		String hql = "SELECT c FROM Course c";
+		TypedQuery<Course> query = session.createQuery(hql, Course.class);
+		List<Course> result = query.getResultList();
 		
 		t.commit();
 		factory.close();
 		session.close();
+		return result;
 	}
 	
 }

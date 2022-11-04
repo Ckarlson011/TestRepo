@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Student")
+@Table(name = "student")
 public class Student {
 
 	@Id
@@ -33,6 +33,6 @@ public class Student {
 	@Column(name = "password")
 	private String sPass;
 	
-	private List<Course> sCourses;
+	//private List<Course> sCourses;
 	
 }

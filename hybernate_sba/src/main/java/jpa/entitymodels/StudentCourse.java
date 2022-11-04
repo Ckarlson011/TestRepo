@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,22 +17,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "course")
-public class Course {
-	
+@Table(name = "studentcourse")
+public class StudentCourse {
+
 	@Id
 	@Column(name = "id")
-	private int cId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	
-	@Column(name = "name")
-	private String cName;
+	@Column(name = "student_email")
+	private String student_email;
 	
-	@Column(name = "Instructor")
-	private String cInstructorName;
-
+	@Column(name = "course_id")
+	private Integer course_id;
 }
