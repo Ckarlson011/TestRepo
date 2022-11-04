@@ -53,6 +53,7 @@ public class SMSRunner {
 						for (Course thisCourse : allCourses) {
 							System.out.println(thisCourse.getCId() + " | " + thisCourse.getCInstructorName() + " | " + thisCourse.getCName());
 						}
+						System.out.println("\nWhich course would you like to register for")//TODO
 					}
 					else {
 						System.out.println("Goodbye!");
