@@ -79,7 +79,7 @@ public class SMSRunner {
 									badSelection = true;
 								}
 							}
-							if (badSelection = false) {
+							if (badSelection == false) {
 								StudentDAO studentDAO2 = new StudentDAO();
 								studentDAO2.registerStudentToCourse(email, selection);
 								keepRunning = false;
@@ -87,12 +87,13 @@ public class SMSRunner {
 								System.out.println("Please try again");
 							}
 						}
-						List<Course> allCourses = courseDAO.getAllCourses();
-						for (Course thisCourse : allCourses) {
+						List<Course> newMyCourses = studentDAO.getStudentCourses(email);
+						for (Course thisCourse : newMyCourses) {
 							System.out.println(thisCourse.getCId() + " | " + thisCourse.getCInstructorName() + " | "
 									+ thisCourse.getCName());
 						}
 						System.out.println("goodbye");
+						break;
 					} else {
 						System.out.println("Goodbye!");
 						break;
