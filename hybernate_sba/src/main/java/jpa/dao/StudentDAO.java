@@ -69,7 +69,7 @@ public class StudentDAO {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
-		
+		java --version
 		StudentCourse newRegistration = new StudentCourse();
 		newRegistration.setStudent_email(sEmail);
 		newRegistration.setCourse_id(cId);
